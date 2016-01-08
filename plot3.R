@@ -18,8 +18,6 @@ usefuldata <- mydata[mydata$Date=="1/2/2007" | mydata$Date=="2/2/2007",]
 # convert the Date to Date class
 usefuldata$Date <- as.Date(usefuldata$Date, format="%d/%m/%Y")
 
-
-
 # convert the Time variable to Time class
 usefuldata$Time <- strptime(paste(usefuldata$Date, usefuldata$Time), format="%Y-%m-%d %H:%M:%S")
 
