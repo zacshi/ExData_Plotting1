@@ -18,12 +18,12 @@ usefuldata <- mydata[mydata$Date=="1/2/2007" | mydata$Date=="2/2/2007",]
 
 # convert the Date to Date class
 usefuldata$Date <- as.Date(usefuldata$Date, format="%d/%m/%Y")
-str(usefuldata)
+# str(usefuldata)
 
 # convert the Time variable to Time class
 
 usefuldata$Time <- strptime(paste(usefuldata$Date, usefuldata$Time), format="%Y-%m-%d %H:%M:%S")
-str(usefuldata)
+# str(usefuldata)
 
 # set up locale
 locale_original <- Sys.getlocale( category = "LC_TIME" )
