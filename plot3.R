@@ -44,6 +44,5 @@ legend("topright",
 dev.copy(png,'plot3.png',  width = 480, height = 480)
 dev.off()
 
-# 
-Sys.setlocale( category = "LC_TIME", locale = locale_original )
+# the end
 
