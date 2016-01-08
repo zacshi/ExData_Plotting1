@@ -25,10 +25,6 @@ usefuldata$Date <- as.Date(usefuldata$Date, format="%d/%m/%Y")
 usefuldata$Time <- strptime(paste(usefuldata$Date, usefuldata$Time), format="%Y-%m-%d %H:%M:%S")
 # str(usefuldata)
 
-# set up locale
-locale_original <- Sys.getlocale( category = "LC_TIME" )
-Sys.setlocale("LC_TIME", "English")
-
 # to make plot 2
 par(mfrow= c(1, 1))
 
@@ -41,8 +37,5 @@ with(usefuldata, plot(Time, Global_active_power,
 # save the output to plot2.png
 dev.copy(png,'plot2.png',  width = 480, height = 480)
 dev.off()
-
-# Restore locale settings
-Sys.setlocale( category = "LC_TIME", locale = locale_original )
 
 # The end
