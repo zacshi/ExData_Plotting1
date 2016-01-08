@@ -22,11 +22,6 @@ usefuldata$Date <- as.Date(usefuldata$Date, format="%d/%m/%Y")
 
 usefuldata$Time <- strptime(paste(usefuldata$Date, usefuldata$Time), format="%Y-%m-%d %H:%M:%S")
 
-# set up locale
-
-locale_original <- Sys.getlocale( category = "LC_TIME" )
-Sys.setlocale("LC_TIME", "English")
-
 # to make plot 4
 
 par(mfrow=c(2,2))
@@ -78,8 +73,7 @@ dev.copy(png,'plot4.png',  width = 480, height = 480)
 dev.off()
 
 
-# 
-Sys.setlocale( category = "LC_TIME", locale = locale_original )
+# The end
 
 
 
